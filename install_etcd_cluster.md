@@ -19,7 +19,7 @@ svcat-etcd-cluster-m6g62x6mwc   1/1       Running   0          1m
 svcat-etcd-cluster-rqk62l46kw   1/1       Running   0          1m
 ```
 
-See [client service](doc/user/client_service.md) for how to access etcd clusters created by the operator.
+See [client service](client_service.md) for how to access etcd clusters created by the operator.
 
 Destroy the etcd cluster:
 
