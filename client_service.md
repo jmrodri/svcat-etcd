@@ -32,29 +32,13 @@ The spec for this service will use the label selector `etcd_cluster: <cluster-na
 For example, create a service for the cluster described above:
 
 ```
-$ cat svcat-etcd-client-service-lb.yaml
-apiVersion: v1
-kind: Service
-metadata:
-  name: svcat-etcd-client-service-lb
-  namespace: default
-spec:
-  ports:
-  - name: client
-    port: 2379
-    protocol: TCP
-    targetPort: 2379
-  selector:
-    etcd_cluster: svcat-etcd-cluster
-  type: LoadBalancer
-
 $ kubectl create -f svcat-etcd-client-service-lb.yaml -n openshift-operators
 ```
 
 Wait until the load balancer is created and the service is assigned an `EXTERNAL-IP`:
 
 ```
-$ kubectl get services
+$ kubectl get services -n openshift-operators
 NAME                           CLUSTER-IP     EXTERNAL-IP     PORT(S)          AGE
 svcat-etcd-cluster             None           <none>          2380/TCP         5m
 svcat-etcd-cluster-client      10.0.222.115   <none>          2379/TCP         5m
