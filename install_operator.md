@@ -16,7 +16,7 @@ $ kubectl create -f deployment.yaml -n openshift-operators
 etcd operator will automatically create a Kubernetes Custom Resource Definition (CRD):
 
 ```bash
-$ kubectl get customresourcedefinitions -n openshift-operators
+$ kubectl get customresourcedefinitions -n openshift-operators | grep etcd
 NAME                                    KIND
 etcdclusters.etcd.database.coreos.com   CustomResourceDefinition.v1beta1.apiextensions.k8s.io
 ```
