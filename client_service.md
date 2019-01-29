@@ -48,7 +48,7 @@ spec:
     etcd_cluster: svcat-etcd-cluster
   type: LoadBalancer
 
-$ kubectl create -f svcat-etcd-client-service-lb.yaml
+$ kubectl create -f svcat-etcd-client-service-lb.yaml -n openshift-operators
 ```
 
 Wait until the load balancer is created and the service is assigned an `EXTERNAL-IP`:
