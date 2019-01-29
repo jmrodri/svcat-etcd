@@ -4,7 +4,7 @@
 Setup basic [RBAC rules]([https://github.com/coreos/etcd-operator/blob/master/doc/user/rbac.md) for etcd operator:
 
 ```
-$ rbac/create_role.sh
+$ rbac/create_role.sh --namespace=openshift-operators
 ```
 
 ## Install etcd operator
