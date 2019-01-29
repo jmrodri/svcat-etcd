@@ -10,13 +10,13 @@ $ rbac/create_role.sh
 ## Install etcd operator
 Create a deployment for etcd operator:
 ```
-$ kubectl create -f deployment.yaml
+$ kubectl create -f deployment.yaml -n openshift-operators
 ```
 
 etcd operator will automatically create a Kubernetes Custom Resource Definition (CRD):
 
 ```bash
-$ kubectl get customresourcedefinitions
+$ kubectl get customresourcedefinitions -n openshift-operators
 NAME                                    KIND
 etcdclusters.etcd.database.coreos.com   CustomResourceDefinition.v1beta1.apiextensions.k8s.io
 ```
@@ -32,8 +32,8 @@ To delete all clusters, delete all cluster CR objects before uninstalling the op
 Clean up etcd operator:
 
 ```bash
-kubectl delete -f deployment.yaml
-kubectl delete endpoints etcd-operator
+kubectl delete -f deployment.yaml -n openshift-operators
+kubectl delete endpoints etcd-operator -n openshift-operators
 kubectl delete crd etcdclusters.etcd.database.coreos.com
 kubectl delete clusterrole etcd-operator
 kubectl delete clusterrolebinding etcd-operator
