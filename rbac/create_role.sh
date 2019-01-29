@@ -48,12 +48,12 @@ done
 echo "Creating role with ROLE_NAME=${ROLE_NAME}, NAMESPACE=${NAMESPACE}"
 sed -e "s/<ROLE_NAME>/${ROLE_NAME}/g" \
   -e "s/<NAMESPACE>/${NAMESPACE}/g" \
-  "${ETCD_OPERATOR_ROOT}/example/rbac/cluster-role-template.yaml" | \
+  "${ETCD_OPERATOR_ROOT}/rbac/cluster-role-template.yaml" | \
   kubectl create -f -
 
 echo "Creating role binding with ROLE_NAME=${ROLE_NAME}, ROLE_BINDING_NAME=${ROLE_BINDING_NAME}, NAMESPACE=${NAMESPACE}"
 sed -e "s/<ROLE_NAME>/${ROLE_NAME}/g" \
   -e "s/<ROLE_BINDING_NAME>/${ROLE_BINDING_NAME}/g" \
   -e "s/<NAMESPACE>/${NAMESPACE}/g" \
-  "${ETCD_OPERATOR_ROOT}/example/rbac/cluster-role-binding-template.yaml" | \
+  "${ETCD_OPERATOR_ROOT}/rbac/cluster-role-binding-template.yaml" | \
   kubectl create -f -
