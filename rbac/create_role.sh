@@ -3,7 +3,7 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-ETCD_OPERATOR_ROOT=$(dirname "${BASH_SOURCE}")/../..
+ETCD_OPERATOR_ROOT=$(dirname "${BASH_SOURCE}")/..
 
 print_usage() {
   echo "$(basename "$0") - Create Kubernetes RBAC role and role bindings for etcd-operator
